@@ -66,5 +66,24 @@ footer {
  position: relative;
  bottom:0;
  width: 100%;
-
 }
+
+div p {
+width: 80%;
+margin: 0%;
+background-color: red;
+background: linear-gradient(to right, #7a7a7a, #2dd4dc);  /* para hacer degrade de coolor after class 3 (min 50) */
+border-radius: 10%;}
+
+.estilo-div {
+margin:auto;
+}
+
+/* Estilo de font-size pedido en la tarea de la clase 5 */
+.estilo-div{ 
+    font-family: "Edu AU VIC WA NT Dots", cursive;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+  
