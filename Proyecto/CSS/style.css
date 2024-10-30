@@ -2,13 +2,15 @@
 *  {
     margin: 0;
     padding:0;
+    box-sizing: border-box; /* Visto en la clase de consulta 4- Es para que la caja se "autoajuste" y me pueda olvidar de eso */
 }
 
 body {
 
 font-family: Arial, Helvetica, sans-serif;
 background-color:lightslategray;
-
+display:flex; /* Visto en After class 4, hacer flexible el body, flexbox es una herramienta para reacomodar nuestros elementos sin nosotros lo tengamos que hacer */
+flex-direction: column;  /* todos los elementos que tenga este body que se  comporten sus elementos hijos como columnas */
 }
 
 
@@ -27,10 +29,6 @@ h1 {
     background-color: black;
     }
 
-nav ul {
-list-style: none;
-
-}
 
 nav ul li {
     display:inline;  /* Es para que se comporte en linea,ya que tiene comportamiento en bloque */
@@ -38,11 +36,18 @@ nav ul li {
 }
 
 nav ul li a {
-text-decoration: none; /* Es para sacarle el lineado al nav a */
-
+text-decoration:none; /* Es para sacarle el lineado al nav a */
+color:white;
 
 }
 
+nav ul {    
+    list-style: none; 
+    display:flex; /* Es para hacer flexibles a los hijos, se adecuan a la pantalla */
+    justify-content: center; /* Se centra el contenido  */
+    padding: 0.7 em; /* Para hacerla mas chica a la barra del nav */
+    }
+    
 table {
 width:80%;/* que ocupe el 80% de la pantalla */
 border-collapse: collapse;
