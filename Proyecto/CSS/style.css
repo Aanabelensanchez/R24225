@@ -22,6 +22,7 @@ text-align: center;
 h2 {
 color:blueviolet;
 background-color: black;
+
 }
 
 h1 {
@@ -41,6 +42,16 @@ color:white;
 
 }
 
+nav ul li a:hover  {
+
+
+background-color: #7a7a7a; /* After class 7, cuando paso el cursor por encima se pone gris */
+
+}
+
+
+
+
 nav ul {    
     list-style: none; 
     display:flex; /* Es para hacer flexibles a los hijos, se adecuan a la pantalla */
@@ -51,6 +62,8 @@ nav ul {
 table {
 width:80%;/* que ocupe el 80% de la pantalla */
 border-collapse: collapse;
+text-align: center;
+margin: 20px auto;
 }
 
 table, th, td {
@@ -60,6 +73,20 @@ border: 2px solid #ccc;
 th, td {
 
 text-align: left; /* alineo el texto de la tabla a la izquierdas */
+
+}
+
+table td button {
+padding: 8px 12px;
+background-color: black;
+color: azure;
+border: none;
+cursor: pointer; /* Cambia la forma del cursor cuando paso la mano, after class 5 */
+}
+
+table td button:hover { 
+background-color: #7a7a7a;
+
 
 }
 
@@ -91,4 +118,12 @@ margin:auto;
     font-weight: <weight>;
     font-style: normal;
   }
-  
+
+.container {
+
+display: grid;
+grid-template-rows: auto auto 1fr auto;
+grid-template-columns: 1fr;
+
+
+}

@@ -21,3 +21,5 @@ Instrucciones paso a paso sobre cómo instalar el proyecto localmente. Por ejemp
 git clone https://github.com/usuario/.git
 cd 
 npm install
+
+mi pagina de git> https://github.com/Aanabelensanchez/R24225
