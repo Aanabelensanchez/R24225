@@ -18,7 +18,7 @@ min-height: 100vh;
 header {
 color:pink;
 text-align: center;
-padding: 15px;
+/* padding: 15px; */
 text-align: center;
 
 }
@@ -234,6 +234,17 @@ color: black;
   
 }
 
+
+/* Para CARRITO.HTML */
+
+.h2cart {
+    color: white;
+    background-color: lightslategray;
+    text-align: center;
+
+}
+
+
 /*Agrego una media Query a la pagina CONTACTO*/
 @media (max-width: 600px) {
     .contacto{
@@ -273,3 +284,17 @@ color: black;
    }
 }
 
+.card-img-top {
+    height: 200px;
+    object-fit: cover; /* IMAGENES QUE QUEDAN CORTADAS OK */ 
+
+}
+
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+      max-width: 5600px;
+      margin: 0;
+      padding:0;
+      box-sizing: border-box; /* Visto en la clase de consulta 4- Es para que la caja se "autoajuste" y me pueda olvidar de eso */
+    }}
