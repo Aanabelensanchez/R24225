@@ -57,8 +57,9 @@ background-color: #7a7a7a; /* After class 7, cuando paso el cursor por encima se
 
 }
 
-
-
+main {
+    flex: 1;
+}
 
 nav ul {    
     list-style: none; 
@@ -70,7 +71,7 @@ nav ul {
 
 footer {
  text-align: center;
- padding: 10px 0;
+ padding: 10px;
  background-color: black;
  color:white;
  position: relative;
@@ -298,3 +299,38 @@ color: black;
       padding:0;
       box-sizing: border-box; /* Visto en la clase de consulta 4- Es para que la caja se "autoajuste" y me pueda olvidar de eso */
     }}
+
+
+
+    /* Agregue el carrousel al index.html */
+
+    #carouselExample {
+        width: 25%; /* Ajusta el tamaño del carrousel al 25% */
+        margin: 0 auto; /* Centra el carrousel en la página */
+    }
+    
+    .carousel-inner {
+        display: flex; /* Flexbox para que las imágenes se alineen de manera horizontal */
+    }
+    
+    .carousel-item {
+        width: 100%; /* Asegura que cada elemento ocupe todo el espacio del carrousel */
+        height: auto; /* Ajusta la altura automáticamente */
+        text-align: center; /* Centra el contenido dentro del item */
+    }
+    
+    .carousel-item img {
+        width: 100%; /* Hace que la imagen ocupe todo el ancho del carrousel */
+        height: auto; /* Ajusta la altura de la imagen proporcionalmente */
+    }
+
+    .pcardCarousel {
+       color: white;
+       background-color: transparent;
+
+    }
+  /*  Es para cuando este vacio el carrito, tenga un fortmato determinado el texto */
+    .text-center{
+        background-color: lightslategray;
+        color:white;
+    }

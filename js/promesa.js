@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     var cardContainer = document.querySelector("#card-container");
     var cart = JSON.parse(localStorage.getItem("cart")) || []; // Inicializar el carrito desde el LocalStorage o vacío
 
+
+    updateCartCount();
+
+
     fetch("https://fakestoreapi.com/products?limit=19")
         .then(response => response.json()) // Promesa que devuelve los datos en bruto y encabezados del JSON
         .then((data) => {
@@ -26,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 `;
 
-                // Capturar el botón (en este caso el <a>)
+                // Capturar el botón
                 const botonAgregar = cardDiv.querySelector("a.btn-primary");
 
                 // Asociar el evento click al botón
@@ -34,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     event.preventDefault(); // Evitar que el enlace recargue la página
                     cart.push(product); // Agregar el producto al carrito
                     localStorage.setItem("cart", JSON.stringify(cart)); // Guardar el carrito actualizado en el LocalStorage
+                    updateCartCount();
                     alert(`Producto "${product.title}" agregado al carrito.`); // Mostrar alerta
                 });
 
@@ -88,3 +93,22 @@ cartContainer.addEventListener("click", (e) => {
     }
 });
 
+
+/*  para Agregar cantidad al CARRITO del navbar */
+
+let cartCount = 0; /* es el ID DEL CONTADOR DEL NAVBAR */
+
+const addToCartButtons = document.querySelector("a.btn-primary"); /* LE PUSE LA CLASE DEL BOTTON DE AGREGAR */
+
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        cartCount++;
+        updateCartCount();
+    });
+});
+
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || []; // Obtener el carrito desde el LocalStorage
+    const cartCountElement = document.getElementById('cart-count'); // Elemento donde se mostrará el número
+    cartCountElement.textContent = cart.length; // Actualizamos el texto con la cantidad de artículos en el carrito
+}

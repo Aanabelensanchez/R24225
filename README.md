@@ -12,8 +12,9 @@ Github, github pages o cualquier servidor gratuito.
 Obtuve la informacion de los productos de la siguiente API:https://fakestoreapi.com/products que pude ver que cumplia con las condiciones establecidas para luego, en el avance del curso podamos consumirla y asi completar la entrega final.
 En la pagina de PRODUCTOS.HTML consumi la api fakestoreapi.
 
-FALTA> MODIFICAR EL CARRITO PARA QUE ME TRAIGA EL TOTAL A PAGAR  y un boton de pagar. y que me salga un cartel que la comprea se ha realizado con exito
-y me falta en en el index.html poner un carrusel con imagenes de articulso en promocion.
+FALTA>
+
+ MODIFICAR EL CARRITO PARA QUE ME TRAIGA EL TOTAL A PAGAR  y un boton de pagar. y que me salga un cartel que la comprea se ha realizado con exito
 
 ## Instalación
 
