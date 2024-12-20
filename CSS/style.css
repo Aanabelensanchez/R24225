@@ -245,6 +245,29 @@ color: black;
 
 }
 
+#product-details p {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 20px;
+}
+
+
+#total-summary {
+        text-align:center;
+        height: 50px;
+        font-size: 1.2rem;
+}
+
+
+.cart-summary {
+    display: grid;
+    place-items: center; /* Centrado tanto vertical como horizontal */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+  }
+
+  
 
 /*Agrego una media Query a la pagina CONTACTO*/
 @media (max-width: 600px) {
@@ -333,4 +356,13 @@ color: black;
     .text-center{
         background-color: lightslategray;
         color:white;
+    }
+
+    #finalizarcompraok {
+        height: 40px !important;  
+        padding: 8px 16px !important;  
+        font-size: 14px !important; 
+        text-align: center;
+        display: block;
+        margin: auto;
     }

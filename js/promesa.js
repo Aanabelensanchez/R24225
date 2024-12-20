@@ -1,10 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => { 
+document.addEventListener("DOMContentLoaded", () => {
     var cardContainer = document.querySelector("#card-container");
     var cart = JSON.parse(localStorage.getItem("cart")) || []; // Inicializar el carrito desde el LocalStorage o vacío
 
-
     updateCartCount();
-
 
     fetch("https://fakestoreapi.com/products?limit=19")
         .then(response => response.json()) // Promesa que devuelve los datos en bruto y encabezados del JSON
@@ -49,18 +47,19 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.error('Error al obtener los datos:', error));
 });
 
-
-/* Es la parte de Javascript del carrito de compras */
-        
-/*    Me lee  el carrito desde el LocalStorage   */
+/* Me lee el carrito desde el LocalStorage */
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-/*  Obtener el contenedor donde se mostrarán los productos */
+/* Obtener el contenedor donde se mostrarán los productos */
 var cartContainer = document.getElementById("cart-container");
 
-// Si el carrito está vacío, mostrar un mensaje
+/* Obtener el elemento para mostrar el total */
+var totalsummary = document.getElementById("total-summary");
+
+/*  Si el carrito está vacío, mostrar un mensaje */
 if (cart.length === 0) {
     cartContainer.innerHTML = `<p class="text-center">El carrito está vacío.</p>`;
+    totalsummary.innerHTML = "Tu carrito está vacío"; // Mostrar mensaje en lugar del total
 } else {
     // Recorrer los productos del carrito y agregarlos al HTML
     cart.forEach((product, index) => {
@@ -81,24 +80,31 @@ if (cart.length === 0) {
         // Agregar el producto al contenedor
         cartContainer.appendChild(productDiv);
     });
+
+    // Calcular el total
+    let totalAmount = 0;
+    cart.forEach((product) => {
+        totalAmount += parseFloat(product.price); /* Asegurarse de que el precio se maneje como número */
+    });
+/* 
+   Mostrar el total en el elemento adecuado */
+    totalsummary.innerHTML = `El total de tu compra es: $${totalAmount.toFixed(2)}`;
 }
 
 // Evento para eliminar productos
 cartContainer.addEventListener("click", (e) => {
     if (e.target.classList.contains("btn-danger")) {
         const index = e.target.dataset.index; // Obtener el índice del producto
-        cart.splice(index, 1); // Eliminar el producto del array
-        localStorage.setItem("cart", JSON.stringify(cart)); // Actualizar el LocalStorage
-        location.reload(); // Recargar la página para reflejar los cambios
+        cart.splice(index, 1);/*  Eliminar el producto del array */
+        localStorage.setItem("cart", JSON.stringify(cart)); /*  Actualizar el LocalStorage */
+        location.reload(); /* Recargar la página para reflejar los cambios */
     }
 });
 
-
-/*  para Agregar cantidad al CARRITO del navbar */
-
+/* Para agregar cantidad al CARRITO del navbar */
 let cartCount = 0; /* es el ID DEL CONTADOR DEL NAVBAR */
 
-const addToCartButtons = document.querySelector("a.btn-primary"); /* LE PUSE LA CLASE DEL BOTTON DE AGREGAR */
+const addToCartButtons = document.querySelectorAll("a.btn-primary"); /* LE PUSE LA CLASE DEL BOTTON DE AGREGAR */
 
 addToCartButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -108,7 +114,13 @@ addToCartButtons.forEach(button => {
 });
 
 function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || []; // Obtener el carrito desde el LocalStorage
-    const cartCountElement = document.getElementById('cart-count'); // Elemento donde se mostrará el número
-    cartCountElement.textContent = cart.length; // Actualizamos el texto con la cantidad de artículos en el carrito
+    const cart = JSON.parse(localStorage.getItem("cart")) || []; /* Obtener el carrito desde el LocalStorage */
+    const cartCountElement = document.getElementById('cart-count'); 
+    cartCountElement.textContent = cart.length; 
+}
+
+
+/*  BOTON DE FINALIZAR COMPRA, que emite alerta   */
+function finalizarCompra() {
+    alert("Tu compra ha sido finalizada. Pronto te estará llegando a tu mail el detalle del envío.");
 }

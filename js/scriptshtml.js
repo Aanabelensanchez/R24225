@@ -1,3 +1,6 @@
+
+/* Solapa JS para el carousel */
+
 document.addEventListener("DOMContentLoaded", () => {
     var cardCarousel = document.querySelector("#carousel-item");
 
